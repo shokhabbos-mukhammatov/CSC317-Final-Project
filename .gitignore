@@ -1,13 +1,22 @@
-# Dependencies
+# node.js
 node_modules/
-
-# Environment Variables
-.env
+package-lock.json
 
 # Logs
-*.log
 logs/
 
-# Build Files
-dist/
-build/
+# Temporary files
+tmp/
+*.tmp
+
+# IDE specific files
+.idea/
+.vscode/
+
+
+# Env files 
+# Ignore all .env files everywhere
+**/.env
+  
+
+CLAUDE.md
