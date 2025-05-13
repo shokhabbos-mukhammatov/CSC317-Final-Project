@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}} | Authentication Template</title>
+  <title>{{title}} | AI Trip Planner</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="/">Auth Template</a>
+        <a href="/">Trip Planner</a>
       </div>
       <ul class="nav-links">
         <li><a href="/" class="{{#if (isActiveRoute path '/')}}active{{/if}}">Home</a></li>
@@ -29,13 +29,59 @@
   </header>
 
   <main>
-    {{> flash-message flashMessage=flashMessage}}
-    
-    {{{body}}}
+
+    <div class="map">
+
+    </div>
+
+    <div class="inputfield">
+    <h3>Plan Your Trip</h3>
+    <form action="tripinput">
+      <h4>Base Info</h4>
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location">
+      <label for="staylength">Length of Stay</label>
+      <input type="text" name="staylength" id="staylength">
+      <label for="travelradius">Transportation</label>
+      <input type="text" placeholder="How far would you like to go?">
+      <label for="walk">Walking</label>
+      <input type="checkbox" name="walk">
+      <label for="car">Car</label>
+      <input type="checkbox" name="Car">
+      <label for="train">Train</label>
+      <input type="checkbox" name="train">
+      <label for="bus">Bus</label>
+      <input type="checkbox" name="bus">
+
+      <h4>Activities</h4>
+      <label for="sports">Sports</label>
+      <input type="checkbox" name="sports">
+      <label for="food">Food</label>
+      <input type="checkbox" name="food">
+      <label for="drinks">Drinks</label>
+      <input type="checkbox" name="drinks">
+      <label for="arts">Art</label>
+      <input type="checkbox" name="arts">
+      <label for="museum">Museum</label>
+      <input type="checkbox" name="museum">
+      <label for="tourist">Tourist Destinations</label>
+      <input type="checkbox" name="tourist">
+
+
+      <label for="prompt">AI prompt</label>
+      <input type="text" id="prompt" name="prompt">
+
+      <button type="submission" class="submission">Generate Itinerary</button>
+    </form>
+    </div>
+
+    <div class="results">
+
+    </div>
   </main>
 
   <footer>
-    <p>&copy; {{currentYear}} Authentication Template. For educational purposes only.</p>
+  
   </footer>
 
   <script src="/js/main.js"></script>

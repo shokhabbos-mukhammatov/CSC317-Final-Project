@@ -22,6 +22,14 @@
       
       <div class="profile-info">
         <div class="info-item">
+	  <span class="label">Name</span>
+          <span class="value"><%= user.name %></span>
+	  <span class="label">Age</span>
+          <span class="value"><%= user.age %></span>
+	  <span class="label">Username</span>
+	  <span class="value"><%= user.name %></span>
+	  <span class="label">Password</span>
+          <span class="value"><%= user.password %></span>
           <span class="label">Email Address</span>
           <span class="value"><%= user.email %></span>
         </div>
@@ -35,7 +43,6 @@
     <div class="profile-section">
       <h3>Protected Content</h3>
       <p>This page is only accessible to authenticated users. You're seeing this because you're logged in!</p>
-      <p>This is where your application would display user-specific content and functionality.</p>
     </div>
   </div>
 </div>
