@@ -1,6 +1,8 @@
 # node.js
 node_modules/
 package-lock.json
+package.json
+
 
 # Logs
 logs/
@@ -20,3 +22,5 @@ tmp/
   
 
 CLAUDE.md
+
+git rebase --onto <commit-before-bug> <buggy-commit> main
