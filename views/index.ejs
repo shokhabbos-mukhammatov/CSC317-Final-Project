@@ -19,17 +19,18 @@
 
   <section class="trip-generator-form">
     <h2>Plan Your Trip</h2>
-    <form action="/generate-itinerary" method="POST">
+    <%- include('./partials/form-errors') %>
+    <form id="tripForm" action="/generate-itinerary" method="POST" novalidate>
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
       <div class="form-group">
         <label for="destination">Destination City</label>
-        <input type="text" id="destination" name="destination" required>
+        <input type="text" id="destination" name="destination" required maxlength="50" pattern="[a-zA-Z\s]+" title="Only letters and spaces allowed">
       </div>
 
       <div class="form-group">
         <label for="days">Number of Days</label>
-        <input type="number" id="days" name="days" required min="1">
+        <input type="number" id="days" name="days" required min="1" max="30">
       </div>
 
       <div class="form-group">
@@ -44,12 +45,12 @@
 
       <div class="form-group">
         <label for="budget">Budget (USD)</label>
-        <input type="number" id="budget" name="budget" required min="0">
+        <input type="number" id="budget" name="budget" required min="1" max="100000">
       </div>
 
       <div class="form-group">
         <label for="preferences">Wishes & Preferences</label>
-        <textarea id="preferences" name="preferences" rows="4" placeholder="e.g., I want to visit museums and eat local food."></textarea>
+        <textarea id="preferences" name="preferences" required minlength="10" maxlength="500"></textarea>
       </div>
 
       <div class="form-actions">
@@ -62,7 +63,9 @@
     <section class="trip-result">
       <h2>Your AI-Generated Itinerary</h2>
       <div class="feature-card">
-        <pre style="white-space: pre-wrap;"><%= itineraryResult %></pre>
+        <div class="ai-itinerary-output">
+          <%- itineraryResult %> <!-- Use unescaped output to render HTML -->
+        </div>
       </div>
     </section>
   <% } %>

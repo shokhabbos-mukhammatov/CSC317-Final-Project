@@ -28,7 +28,17 @@ Respond with a nicely formatted day-by-day plan including brief activities, loca
 
     // Define the message structure for GPT-4.1
     const messages = [
-        { role: "system", content: "You are a travel planner AI that creates personalized trip itineraries." },
+        { role: "system", content: `
+You are a travel planner AI. Your job is to create personalized, detailed travel itineraries.
+
+IMPORTANT:
+— Use proper HTML formatting.—Use <h3> for each day (e.g., <h3>Day 1: Arrival in Tokyo</h3>).
+— List daily activities using <ul><li>...</li></ul>.
+— If a location (e.g., Eiffel Tower) is mentioned, include a Google Maps link like:
+  <a href="https://www.google.com/maps/search/Eiffel+Tower" target="_blank">View on map</a>.—Return only the structured HTML for direct rendering on the website.
+— Ensure each day's section is clearly separated.
+`
+        },
         { role: "user", content: prompt }
     ];
 
@@ -58,6 +68,13 @@ Respond with a nicely formatted day-by-day plan including brief activities, loca
 
         // Extract generated itinerary text from response
         const reply = response.body?.choices?.[0]?.message?.content;
+        const cityMatch = reply.match(/Day\s1:.*in\s([A-Z][a-zA-Z\s]+)/i);
+        const extractedCity = cityMatch ? cityMatch[1].trim() : null;
+
+        if (extractedCity) {
+            console.log("🗺️ Extracted city from AI response:", extractedCity);
+        }
+
 
         // If user is logged in, save itinerary to History model
         if (req.session.user) {
