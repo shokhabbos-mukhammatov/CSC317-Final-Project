@@ -39,10 +39,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default:0
   },
-  history:{
+  history: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'History'
-  }
+  }]
 }, {
   // Add virtual properties when converting to JSON
   toJSON: { virtuals: true },

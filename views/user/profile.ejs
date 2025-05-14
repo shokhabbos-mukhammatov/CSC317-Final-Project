@@ -30,6 +30,24 @@
       <div class="profile-actions">
         <a href="/user/settings" class="btn secondary-btn">Edit Profile</a>
       </div>
+
+      <!-- note: just testing if its displayed, only change in profile.ejs that should be merged, ui can be edited after-->
+      <!-- if you guys(FRONTEND) already added this no need to merge-->
+      <div class="itinerary-history">
+        <h2>Previously Generated Itineraries</h2>
+
+        <% if (user.history && user.history.length > 0) { %>
+          <% user.history.forEach(function(history) { %>
+            <div>
+              <h3><%= history.location %></h3>
+              <p><%= history.itinerary %></p>
+              <p><em>Date: <%= history.createdAt.toDateString() %></em></p>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <p>No itineraries found. Lets make some travel plans!</p>
+        <% } %>
+      </div>
     </div>
     
     <div class="profile-section">

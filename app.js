@@ -19,6 +19,9 @@ const indexRoutes = require('./routes/index');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 
+const historyRoutes = require('./routes/history');
+
+
 // Import custom middleware
 const { setLocals } = require('./middlewares/locals');
 const { handleErrors } = require('./middlewares/error-handler');
@@ -142,10 +145,13 @@ app.use((req, res, next) => {
 // Our custom locals middleware
 app.use(setLocals);
 
-// Routes
+// OG Routes
 app.use('/', indexRoutes);
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
+
+// TEAM B!!! routes added by our team
+app.use('/history', historyRoutes);
 
 // Error handling middleware
 app.use(handleErrors);

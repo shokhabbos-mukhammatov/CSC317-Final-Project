@@ -5,19 +5,37 @@
 const User = require('../models/User');
 const Image = require('../models/Image');
 const upload = require('../middlewares/upload');
+const History =require('../models/History');
 
-/**
- * Display user profile page
- */
-exports.getProfile = (req, res) => {
+exports.getProfile = async (req, res) => {
   // Add hasProfileImage flag to user object
-  const user = {...req.session.user};
-  user.hasProfileImage = user.hasProfileImage || false;
-  
-  res.render('user/profile', {
-    title: 'Profile',
-    user: user
-  });
+  //const user = {...req.session.user};
+  try {
+    // followed get settings logic from profs example
+    const userId = req.session.user.id;
+          
+    // all previously saved itineraries in user database- history
+    const user = await User.findById(userId).populate('history');
+
+    if (!user) {
+      return res.status(404).render('404', { message: 'USERcontroller: getProfile: User not found' });
+    }
+    //for now load all history with profile
+    //Possibly: drop down menu with each location/date as title
+    // then expand to see itinerary(?)
+    res.render('user/profile', {
+      title: 'Profile',
+      user: user,
+      history: user.history
+    });
+  } catch (error) {
+    // const error = new Error('User not found');
+    //         error.statusCode = 404;
+    //         throw error;
+    console.error('error handling profile:', error.message);
+    res.status(500).send('profile error');
+    
+  }
 };
 
 /**

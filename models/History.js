@@ -1,5 +1,5 @@
 /**
- * History model
+ * History model- I basically followed the example of the user model to start from
  * Defines the schema for storing user user itinarary history
  */
 const mongoose = require('mongoose');
