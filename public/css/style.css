@@ -447,9 +447,40 @@ input:focus {
   font-weight: 500;
   color: var(--text-light);
 }
-.itinerary-history{
-  padding: 2rem;
+
+.accordion {
+  margin-top: 10px;
 }
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #85bdd7;
+  border-radius: 5px;
+}
+
+.accordion-item label {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  background-color:  #d6eaf7;
+  font-weight: bold;
+}
+.accordion-item label:hover {
+    background-color: #6baad3;
+}
+
+.accordion-item input[type="checkbox"] {
+  display: none;
+}
+/* maxheight is updated in profile.js */
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
 .profile-section, .settings-section {
   background-color: var(--white);
   border-radius: 8px;

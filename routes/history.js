@@ -16,4 +16,7 @@ router.use(isAuthenticated);
 // POST /history/add - Add a new history entry
 router.post('/add', historyController.addHistory);
 
+// POST route for deleting history- id for profile.ejs
+router.post('/delete-history/:id', historyController.deleteHistory);
+
 module.exports = router;
