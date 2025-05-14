@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
 <div class="container">
-  <div class="welcome-section">
+  <section class="welcome-section">
     <h1><%= message %></h1>
     <p>A simple authentication system for web applications</p>
     
@@ -15,9 +15,59 @@
         <a href="/auth/register" class="btn secondary-btn">Register</a>
       </div>
     <% } %>
-  </div>
-  
-  <div class="features-section">
+  </section>
+
+  <section class="trip-generator-form">
+    <h2>Plan Your Trip</h2>
+    <form action="/generate-itinerary" method="POST">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+      <div class="form-group">
+        <label for="destination">Destination City</label>
+        <input type="text" id="destination" name="destination" required>
+      </div>
+
+      <div class="form-group">
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" name="days" required min="1">
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" id="startDate" name="startDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" id="endDate" name="endDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Budget (USD)</label>
+        <input type="number" id="budget" name="budget" required min="0">
+      </div>
+
+      <div class="form-group">
+        <label for="preferences">Wishes & Preferences</label>
+        <textarea id="preferences" name="preferences" rows="4" placeholder="e.g., I want to visit museums and eat local food."></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn primary-btn">Generate Itinerary</button>
+      </div>
+    </form>
+  </section>
+
+  <% if (typeof itineraryResult !== 'undefined') { %>
+    <section class="trip-result">
+      <h2>Your AI-Generated Itinerary</h2>
+      <div class="feature-card">
+        <pre style="white-space: pre-wrap;"><%= itineraryResult %></pre>
+      </div>
+    </section>
+  <% } %>
+
+  <section class="features-section">
     <h2>Features</h2>
     <div class="feature-grid">
       <div class="feature-card">
@@ -33,24 +83,25 @@
         <p>Restrict access to authenticated users only</p>
       </div>
     </div>
-  </div>
+  </section>
 </div>
+<%- include('./partials/footer') %>
+
 <!--Didnt make a partials file for this because used only on this page-->
 <!-- JUST A TEST for me to see if history models working: DOES NOT NEED TO BE MERGED -->
 <!--actual will recieve input from AI recommendation-->
-<section class="history-form">
-  <h2>TEST History</h2>
-  <form action="/history/add" method="POST">
-    <div class="form-group">
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location" required>
-    </div>
-    <div class="form-group">
-      <label for="itinerary">Itinerary:</label>
-      <textarea id="itinerary" name="itinerary" rows="3" required></textarea>
-    </div>
-    <button type="submit" class="btn">Save History</button>
-  </form>
-</section>
+<!--<section class="history-form">-->
+<!--  <h2>TEST History</h2>-->
+<!--  <form action="/history/add" method="POST">-->
+<!--    <div class="form-group">-->
+<!--      <label for="location">Location:</label>-->
+<!--      <input type="text" id="location" name="location" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="itinerary">Itinerary:</label>-->
+<!--      <textarea id="itinerary" name="itinerary" rows="3" required></textarea>-->
+<!--    </div>-->
+<!--    <button type="submit" class="btn">Save History</button>-->
+<!--  </form>-->
+<!--</section>-->
 
-<%- include('./partials/footer') %>
