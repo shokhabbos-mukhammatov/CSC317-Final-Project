@@ -3,18 +3,14 @@
 <div class="container">
   <section class="welcome-section">
     <h1><%= message %></h1>
-    <p>A simple authentication system for web applications</p>
-    
-    <% if (isAuthenticated) { %>
-      <div class="action-buttons">
-        <a href="/user/profile" class="btn primary-btn">View Profile</a>
-      </div>
-    <% } else { %>
-      <div class="action-buttons">
-        <a href="/auth/login" class="btn primary-btn">Login</a>
-        <a href="/auth/register" class="btn secondary-btn">Register</a>
-      </div>
-    <% } %>
+    <p>Plan smarter with Trip Tuner. Just enter your destination, travel dates, budget, and preferences — and get a personalized,
+      day-by-day itinerary in seconds. Powered by AI, Trip Tuner makes travel planning simple, fast, and tailored just for you.</p>
+<!--    <% if(!isAuthenticated) { %>-->
+<!--      <div class="action-buttons">-->
+<!--        <a href="/auth/login" class="btn primary-btn">Login</a>-->
+<!--        <a href="/auth/register" class="btn secondary-btn">Register</a>-->
+<!--      </div>-->
+<!--    <% } %>-->
   </section>
 
   <section class="trip-generator-form">

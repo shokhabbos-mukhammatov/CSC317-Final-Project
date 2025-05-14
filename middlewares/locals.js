@@ -12,6 +12,8 @@ exports.setLocals = (req, res, next) => {
   
   // Add the current path for navigation highlighting
   res.locals.path = req.path;
-  
+
+  res.locals.description = 'Trip Tuner is an AI-powered travel planner that generates personalized itineraries with maps, budgeting tips, and day-by-day plans.';
+
   next();
 };

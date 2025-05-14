@@ -3,14 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %> | Authentication Template</title>
+
+  <meta name="description" content="<%= description || 'Trip Tuner is an AI-powered travel planner that generates personalized itineraries with maps, budgeting tips, and day-by-day plans.' %>">
+  <meta name="keywords" content="Trip Tuner, AI travel planner, itinerary generator, vacation planning, custom travel plan, travel AI">
+  <meta name="author" content="Shokhabbos Mukhammatov, Aketzali Zeledon, Meridian Helmantoler">
+
+  <!-- Open Graph for Facebook and others -->
+  <meta property="og:title" content="<%= title || 'Trip Tuner – Plan Your Dream Trip' %>">
+  <meta property="og:description" content="<%= description || 'Use AI to create custom travel itineraries, complete with attractions, budgets, and maps.' %>">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://triptuner-1mqe.onrender.com/">
+<!--  <meta property="og:image" content="https://https://triptuner-1mqe.onrender.com//images/og-image.jpg">-->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trip Tuner – AI Travel Itinerary Generator">
+  <meta name="twitter:description" content="Create day-by-day travel plans powered by AI. Personalized, simple, and map-friendly.">
+<!--  <meta name="twitter:image" content="https://https://triptuner-1mqe.onrender.com//images/twitter-card.jpg">-->
+
+  <title><%= title %> | Trip Tuner</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="/">Auth Template</a>
+        <a href="/">Trip Tuner</a>
       </div>
       <ul class="nav-links">
         <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Home</a></li>

@@ -38,7 +38,7 @@ const itineraryValidation = [
 router.get('/', (req, res) => {
   res.render('index', {
     title: 'Home',
-    message: 'Welcome to the Authentication Template'
+    message: 'Welcome to the Trip Tuner!',
   });
 });
 
@@ -46,7 +46,7 @@ router.get('/', (req, res) => {
 router.get('/about', (req, res) => {
   res.render('about', {
     title: 'About',
-    message: 'Learn about this application'
+    message: 'Hello from the Trip Tuner team!',
   });
 });
 
