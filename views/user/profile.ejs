@@ -19,11 +19,19 @@
           <p class="subtitle">Member since <%= typeof user.createdAt !== 'undefined' ? helpers.formatDate(user.createdAt) : 'N/A' %></p>
         </div>
       </div>
-      
+
+      <div class="info-item">
+          <span class="label">Fullname</span>
+          <span class="value"><%= user.fullname%></span>
+      </div>
       <div class="profile-info">
         <div class="info-item">
           <span class="label">Email Address</span>
           <span class="value"><%= user.email %></span>
+        </div>
+        <div class="info-item">
+          <span class="label">Age</span>
+          <span class="value"><%= user.age %></span>
         </div>
       </div>
       

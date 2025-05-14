@@ -96,7 +96,18 @@ exports.updateSettings = [
             // Update session data
             req.session.user.username = req.body.username;
           }
-          
+          //update Fullname if provided and different
+          if (req.body.fullname && req.body.fullname !== user.fullname){
+            user.fullname = req.body.fullname;
+            // Update session data
+            req.session.user.fullname = req.body.fullname;
+          }
+          //update User Age
+          if (req.body.age && req.body.age !== user.age){
+            user.age = req.body.age;
+            // Update session data
+            req.session.user.age = req.body.age;
+          }
           // Process profile image if uploaded
           if (req.file) {
             try {
