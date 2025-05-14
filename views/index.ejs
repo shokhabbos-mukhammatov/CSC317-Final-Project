@@ -84,23 +84,28 @@
     </div>
   </section>
 </div>
+
+
 <%- include('./partials/footer') %>
 
-<!--Didnt make a partials file for this because used only on this page-->
-<!-- JUST A TEST for me to see if history models working: DOES NOT NEED TO BE MERGED -->
-<!--actual will recieve input from AI recommendation-->
-<!--<section class="history-form">-->
-<!--  <h2>TEST History</h2>-->
-<!--  <form action="/history/add" method="POST">-->
-<!--    <div class="form-group">-->
-<!--      <label for="location">Location:</label>-->
-<!--      <input type="text" id="location" name="location" required>-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--      <label for="itinerary">Itinerary:</label>-->
-<!--      <textarea id="itinerary" name="itinerary" rows="3" required></textarea>-->
-<!--    </div>-->
-<!--    <button type="submit" class="btn">Save History</button>-->
-<!--  </form>-->
-<!--</section>-->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const startDateInput = document.getElementById('startDate');
+    const endDateInput = document.getElementById('endDate');
 
+    // Set min value of startDate to today
+    const today = new Date().toISOString().split('T')[0];
+    startDateInput.setAttribute('min', today);
+
+    // When startDate changes, set min of endDate to the selected startDate
+    startDateInput.addEventListener('change', function () {
+      const selectedStart = this.value;
+      endDateInput.setAttribute('min', selectedStart);
+
+      // Optional: clear endDate if it became invalid
+      if (endDateInput.value && endDateInput.value < selectedStart) {
+        endDateInput.value = '';
+      }
+    });
+  });
+</script>

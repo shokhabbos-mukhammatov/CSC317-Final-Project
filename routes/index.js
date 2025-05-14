@@ -46,7 +46,15 @@ router.get('/', (req, res) => {
 router.get('/about', (req, res) => {
   res.render('about', {
     title: 'About',
-    message: 'Hello from the Trip Tuner team!',
+    message: 'About the Trip Tuner team!',
+  });
+});
+
+// GET /Contact Us - About route
+router.get('/contactus', (req, res) => {
+  res.render('contactus', {
+    title: 'Contact Us',
+    message: 'Contact the Trip Tuner team!',
   });
 });
 

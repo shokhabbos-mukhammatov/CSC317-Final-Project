@@ -1,0 +1,34 @@
+<%- include('./partials/header') %>
+<div class="form">
+    <div class="col-md-8 offset-md-2">
+        <h1>Send Message</h1>
+        <div class="errors">
+        </div>
+        <form target="_blank" action="https://formsubmit.co/el/tuvafu" method="POST">
+            <div>
+                <div>
+                    <div>
+                        <label>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="email" name="email"  placeholder="Email Address" required>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label>
+                    <textarea placeholder="Your Message"  name="message" rows="10" required></textarea>
+                </label>
+            </div>
+            <button type="submit" >Submit Form</button>
+        </form>
+    </div>
+</div>
+<!-- do we need to save submisisons to the database as well? -->
+<!-- if not enough time we could also just have links to each of our githubs/linkdins/portfolios
+a type of "Meet the team" type thing -->
+<%- include('./partials/footer') %>

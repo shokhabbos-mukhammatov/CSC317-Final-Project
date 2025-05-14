@@ -33,6 +33,7 @@
       <ul class="nav-links">
         <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Home</a></li>
         <li><a href="/about" class="<%= path === '/about' ? 'active' : '' %>">About</a></li>
+        <li><a href="/contactus" class="<%= path === '/contactus' ? 'active' : '' %>">Contact Us</a></li>
         
         <% if (isAuthenticated) { %>
           <li><a href="/user/profile" class="<%= path === '/user/profile' ? 'active' : '' %>">Profile</a></li>
