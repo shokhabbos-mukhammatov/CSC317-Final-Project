@@ -48,7 +48,8 @@
         <% user.history.forEach(function(history, index) { %>
           <div>
             <h3><%= history.location %></h3>
-            <p><%= history.itinerary %></p>
+            <!-- <p><%= history.itinerary %></p> -->
+            <p><%- history.itinerary.replace(/\*/g, '<br>') %></p>
             <p><em>Date: <%= history.createdAt.toDateString() %></em></p>
             <% if (index < user.history.length - 1) { %>
               <hr>
