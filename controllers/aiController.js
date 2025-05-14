@@ -37,6 +37,7 @@ IMPORTANT:
 — If a location (e.g., Eiffel Tower) is mentioned, include a Google Maps link like:
   <a href="https://www.google.com/maps/search/Eiffel+Tower" target="_blank">View on map</a>.—Return only the structured HTML for direct rendering on the website.
 — Ensure each day's section is clearly separated.
+—At the end, include a line: "City: <city name>" so it can be extracted and stored.
 `
         },
         { role: "user", content: prompt }
@@ -68,12 +69,10 @@ IMPORTANT:
 
         // Extract generated itinerary text from response
         const reply = response.body?.choices?.[0]?.message?.content;
-        const cityMatch = reply.match(/Day\s1:.*in\s([A-Z][a-zA-Z\s]+)/i);
-        const extractedCity = cityMatch ? cityMatch[1].trim() : null;
+        let cityMatch = reply.match(/City:\s*(.+)/i);
+        let extractedCity = cityMatch ? cityMatch[1].trim() : destination;
 
-        if (extractedCity) {
-            console.log("🗺️ Extracted city from AI response:", extractedCity);
-        }
+        console.log(" Extracted city from AI response:", extractedCity);
 
 
         // If user is logged in, save itinerary to History model
@@ -84,9 +83,10 @@ IMPORTANT:
             // Create and save new history record
             const history = new History({
                 userId: req.session.user.id,
-                location: destination,
+                location: extractedCity,
                 itinerary: reply
             });
+
 
             await history.save();
 
