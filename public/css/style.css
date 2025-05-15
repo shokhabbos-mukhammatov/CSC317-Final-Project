@@ -308,28 +308,10 @@ input:focus {
   color: var(--error-color);
 }
 
-/* 
- * Home Page 
+/*
+ * Home Page
  */
-.welcome-section {
-  text-align: center;
-  padding: 3rem 0;
-  position:absolute;
-  top: -25%;
-  background: rgba(61, 52, 42, 0.7);
-}
 
-.welcome-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: rgb(101, 175, 65);
-}
-
-.welcome-section p {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  color: rgb(255, 251, 239);
-}
 .hero-section {
   position: relative;
   height: 500px;
@@ -370,7 +352,7 @@ input:focus {
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--success-color);
+  color: var(--secondary-color);
 }
 
 .hero-content p {
@@ -384,19 +366,6 @@ input:focus {
   display: flex;
   justify-content: center;
   gap: 1rem;
-}
-
-.sectbreak{
-  background-color: var(--white);
-  width: 100%;
-  height: 4rem;
-  position: absolute;
-}
-
-.sectbreak h2{
-  color: rgb(101, 175, 65);
-  padding-left: 3rem;
-  padding-top: 0.7rem;
 }
 
 

@@ -1,14 +1,13 @@
 <%- include('./partials/header') %>
+
 <section class="hero-section">
   <img class="hero-bg" src="https://64.media.tumblr.com/1b13d30c33cf63d8e3549a2594623317/50a9c8a450666950-f1/s1280x1920/6dcd1501d8c93a85d11a49795ee5d0e4d0aa6216.jpg" alt="Hero Background">
-
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
     <h1><%= message %></h1>
     <p>
       Plan smarter with Trip Tuner. Enter your destination, travel dates, budget, and preferences — and get a personalized,
-      day-by-day itinerary in seconds. <br>
+      day-by-day itinerary in seconds.
       Powered by AI, Trip Tuner makes travel planning simple, fast, and tailored just for you.
     </p>
     <% if (!isAuthenticated) { %>
@@ -19,8 +18,7 @@
     <% } %>
   </div>
 </section>
-
-
+<div class="container">
 
   <section class="trip-generator-form">
     <h2>Trip Tuner: AI Travel Planner</h2>
