@@ -36,10 +36,13 @@ exports.postRegister = async (req, res, next) => {
     // Create new user
     const user = new User({
       username: req.body.username,
+      fullname: req.body.fullname,
+      age: req.body.age,
       email: req.body.email,
       password: req.body.password,
       hasProfileImage: false
     });
+
 
     // Save user to database
     await user.save();
