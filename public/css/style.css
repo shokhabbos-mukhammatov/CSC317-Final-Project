@@ -578,19 +578,21 @@ input:focus {
 
 .accordion-item {
   margin-bottom: 10px;
-  border: 1px solid #85bdd7;
+  border: 1px solid #c5d284;
   border-radius: 5px;
 }
 
 .accordion-item label {
+  color: white;
   display: block;
   cursor: pointer;
   padding: 10px;
-  background-color:  #d6eaf7;
+  background-color:  #697720;
   font-weight: bold;
 }
 .accordion-item label:hover {
-    background-color: #6baad3;
+  color:black;
+  background-color:#f0f9bf;
 }
 
 .accordion-item input[type="checkbox"] {
@@ -604,6 +606,27 @@ input:focus {
   padding: 0 10px;
   background-color: #fff;
 }
+.delete-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #d62828;
+}
+
+.delete-button:active {
+  transform: scale(0.98);
+  background-color: #b22222;
+}
+
 
 .profile-section, .settings-section {
   background-color: var(--white);
