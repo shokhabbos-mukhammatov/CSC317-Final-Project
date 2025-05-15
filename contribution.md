@@ -26,3 +26,19 @@ This section outlines our individual contributions to the development of **Trip 
 - Helped design a clean, card-based layout for the “About This Application” and “Technology Stack” sections. Followed guidelines and assistance of Meridian Helmantoler.
 
 ---
+
+## Aketzali Zeledon - Contributions
+
+### User Profile & Itinerary History Management
+- Designed and implemented the User Profile Page to display user-specific information such as username, email, and registration date. 
+- Integrated the History Model with Mongoose to store itinerary histories linked to specific users. The schema includes userId, location, itinerary, and createdAt.
+- Made the accordion UI for viewing past itineraries, allowing users to expand and collapse each trip for a clean and organized display.
+
+### History Controller Logic
+Built out CRUD operations in the historyController, including:
+
+- getHistory: Fetches all itineraries for the logged-in user and renders them in the profile view.
+- deleteHistory: Implemented deletion logic using History.findByIdAndDelete, ensuring secure and smooth removal of itineraries from both the database and the UI.
+
+### Route Handling
+- Added new routes in the historyRoutes file to manage itinerary retrieval and deletion, following REST principles. Registered these routes within app.js for proper middleware handling and session control.
