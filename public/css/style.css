@@ -8,13 +8,13 @@
 }
 
 :root {
-  --primary-color: #697720;
-  --primary-dark: #414a13;
-  --secondary-color: #2ecc71;
-  --secondary-dark: #27ae60;
+  --primary-color: #81b622;
+  --primary-dark: #3d550c;
+  --secondary-color: #ecf87f;
+  --secondary-dark: #59981a;
   --text-color: #333;
   --text-light: #666;
-  --background-color: #f5f5f5;
+  --background-color: #f4fdd9;
   --border-color: #ddd;
   --error-color: #e74c3c;
   --success-color: #2ecc71;
@@ -121,9 +121,9 @@ footer {
   text-align: center;
   padding: 2rem;
   margin-top: auto;
-  background-color: var(--white);
+  background-color: var(--primary-dark);
   border-top: 1px solid var(--border-color);
-  color: var(--text-light);
+  color: var(--white);
 }
 
 /* 
