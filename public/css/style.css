@@ -430,6 +430,37 @@ input:focus {
 /* 
  * About Page 
  */
+
+ .about-us{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+ }
+
+.about-us .profile{
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us img{
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container h2{
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
 .about-section, .tech-stack {
   background-color: var(--white);
   padding: 2rem;
@@ -438,7 +469,7 @@ input:focus {
   margin-bottom: 2rem;
 }
 
-.about-section h1 {
+.about-section h2 {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
