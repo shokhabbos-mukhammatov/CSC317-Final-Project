@@ -42,3 +42,21 @@ Built out CRUD operations in the historyController, including:
 
 ### Route Handling
 - Added new routes in the historyRoutes file to manage itinerary retrieval and deletion, following REST principles. Registered these routes within app.js for proper middleware handling and session control.
+
+
+---
+
+### Meridian Helmantoler - Contributions
+
+### Layout Design
+- Reworked pages to create a better flow with the UI and CSS design
+- Helped to set up the pages and layout for the project
+- Implemented about us page cards for the team profiles
+
+### CSS style sheet
+- Worked on CSS styling to persoanlize our project
+- Cleaned up pages to work with CSS styling, adding in IDs, Class', div's, etc.
+
+### Troubleshooting
+- troubleshooting website pages and features
+- going over code and checking in with teammates, making sure that code and files are intentional and checked for validation and bugs 
