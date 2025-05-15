@@ -728,3 +728,52 @@ button.primary-btn:hover {
   transform: translateY(-2px);
 }
 /* ---/\ /\ /\ /\ /\ Contact Form Styling, Ask me if you need changes. Shok --- */
+
+/* --- AI Prompt form styling ---*/
+.trip-generator-form {
+  background-color: var(--white);
+  padding: 2rem;
+  margin: 3rem auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+}
+
+.trip-generator-form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.trip-generator-form .form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.trip-generator-form .form-control,
+.trip-generator-form input,
+.trip-generator-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.trip-generator-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.trip-generator-form .form-actions {
+  text-align: center;
+}
+
+.trip-generator-form .btn {
+  width: 100%;
+  max-width: 300px;
+}
+/* --- AI Prompt form styling ---*/

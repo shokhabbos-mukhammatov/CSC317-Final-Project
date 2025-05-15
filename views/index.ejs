@@ -19,38 +19,41 @@
   </section>
 
   <section class="trip-generator-form">
+    <h2>Trip Tuner: AI Travel Planner</h2>
+
     <%- include('./partials/form-errors') %>
+
     <form id="tripForm" action="/generate-itinerary" method="POST" novalidate>
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
-      <div class="form-group" id="fg1">
+      <div class="form-group">
         <label for="destination">Destination City</label>
-        <input type="text" id="destination" name="destination" required maxlength="50" pattern="[a-zA-Z\s]+" title="Only letters and spaces allowed">
+        <input type="text" id="destination" name="destination" class="form-control" required maxlength="50" pattern="[a-zA-Z\s]+" title="Only letters and spaces allowed">
       </div>
 
-      <div class="form-group"id="fg2">
+      <div class="form-group">
         <label for="days">Number of Days</label>
-        <input type="number" id="days" name="days" required min="1" max="30">
+        <input type="number" id="days" name="days" class="form-control" required min="1" max="30">
       </div>
 
-      <div class="form-group" id="fg3">
+      <div class="form-group">
         <label for="startDate">Start Date</label>
-        <input type="date" id="startDate" name="startDate" required>
+        <input type="date" id="startDate" name="startDate" class="form-control" required>
       </div>
 
-      <div class="form-group" id="fg4">
+      <div class="form-group">
         <label for="endDate">End Date</label>
-        <input type="date" id="endDate" name="endDate" required>
+        <input type="date" id="endDate" name="endDate" class="form-control" required>
       </div>
 
-      <div class="form-group" id="fg5">
+      <div class="form-group">
         <label for="budget">Budget (USD)</label>
-        <input type="number" id="budget" name="budget" required min="1" max="100000">
+        <input type="number" id="budget" name="budget" class="form-control" required min="1" max="100000">
       </div>
 
       <div class="form-group">
         <label for="preferences">Wishes & Preferences</label>
-        <textarea id="preferences" name="preferences" required minlength="10" maxlength="500"></textarea>
+        <textarea id="preferences" name="preferences" class="form-control" required minlength="10" maxlength="500"></textarea>
       </div>
 
       <div class="form-actions">
@@ -59,7 +62,8 @@
     </form>
   </section>
 
-  <% if (typeof itineraryResult !== 'undefined') { %>
+
+<% if (typeof itineraryResult !== 'undefined') { %>
     <section class="trip-result">
       <h2>Your AI-Generated Itinerary</h2>
       <div class="feature-card">
