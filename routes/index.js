@@ -8,6 +8,8 @@ const express = require('express');
 const router = express.Router();
 const { body } = require('express-validator');
 const aiController = require('../controllers/aiController');
+const contactController = require('../controllers/contactController');
+
 
 // Validation middleware for /generate-itinerary
 const itineraryValidation = [
@@ -61,5 +63,8 @@ router.get('/contactus', (req, res) => {
 // POST /generate-itinerary - Trip planning form submission
 // Validates input then triggers GPT-powered itinerary generator
 router.post('/generate-itinerary', itineraryValidation, aiController.generateItinerary);
+
+router.get('/contactus', contactController.getContactForm);
+router.post('/contactus', contactController.sendContactMessage);
 
 module.exports = router;

@@ -1,34 +1,37 @@
 <%- include('./partials/header') %>
-<div class="form">
-    <div  class="col-md-8 offset-md-2">
+
+<div class="container">
+    <div class="form">
         <h1>Send Message</h1>
-        <div class="errors">
-        </div>
-        <form target="_blank" action="https://formsubmit.co/el/tuvafu" method="POST">
-            <div>
-                <div>
-                    <div>
-                        <label>
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="email" name="email"  placeholder="Email Address" required>
-                        </label>
-                    </div>
-                </div>
+
+        <%- include('./partials/flash-message') %>
+        <%- include('./partials/form-errors') %>
+
+        <form method="POST" action="/contactus">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
             </div>
-            <div>
-                <label>
-                    <textarea placeholder="Your Message"  name="message" rows="10" required></textarea>
-                </label>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
             </div>
-            <button type="submit" >Submit Form</button>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-control" rows="8" required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary-btn">Send Message</button>
         </form>
     </div>
 </div>
-<!-- do we need to save submisisons to the database as well? -->
-<!-- if not enough time we could also just have links to each of our githubs/linkdins/portfolios
-a type of "Meet the team" type thing -->
+
 <%- include('./partials/footer') %>
+
