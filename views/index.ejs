@@ -1,4 +1,9 @@
 <%- include('./partials/header') %>
+<div class="imgcontainer">
+<img class="bk-img" src="https://64.media.tumblr.com/1b13d30c33cf63d8e3549a2594623317/50a9c8a450666950-f1/s1280x1920/6dcd1501d8c93a85d11a49795ee5d0e4d0aa6216.jpg" alt="">
+</div>
+
+<div class="sectbreak"><h2>Plan Your Trip</h2></div>
 
 <div class="container">
   <section class="welcome-section">
@@ -14,32 +19,31 @@
   </section>
 
   <section class="trip-generator-form">
-    <h2>Plan Your Trip</h2>
     <%- include('./partials/form-errors') %>
     <form id="tripForm" action="/generate-itinerary" method="POST" novalidate>
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
-      <div class="form-group">
+      <div class="form-group" id="fg1">
         <label for="destination">Destination City</label>
         <input type="text" id="destination" name="destination" required maxlength="50" pattern="[a-zA-Z\s]+" title="Only letters and spaces allowed">
       </div>
 
-      <div class="form-group">
+      <div class="form-group"id="fg2">
         <label for="days">Number of Days</label>
         <input type="number" id="days" name="days" required min="1" max="30">
       </div>
 
-      <div class="form-group">
+      <div class="form-group" id="fg3">
         <label for="startDate">Start Date</label>
         <input type="date" id="startDate" name="startDate" required>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" id="fg4">
         <label for="endDate">End Date</label>
         <input type="date" id="endDate" name="endDate" required>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" id="fg5">
         <label for="budget">Budget (USD)</label>
         <input type="number" id="budget" name="budget" required min="1" max="100000">
       </div>
@@ -70,16 +74,16 @@
     <h2>Features</h2>
     <div class="feature-grid">
       <div class="feature-card">
-        <h3>User Authentication</h3>
-        <p>Secure login and registration with password hashing</p>
+        <h3>Itinerary Generation</h3>
+        <p>Customizable and personalized itineraries for your next trip</p>
       </div>
       <div class="feature-card">
-        <h3>Session Management</h3>
-        <p>Persistent sessions with secure cookies</p>
+        <h3>Customized Profile</h3>
+        <p>Save all your planned trips and edit them at any time!</p>
       </div>
       <div class="feature-card">
-        <h3>Protected Routes</h3>
-        <p>Restrict access to authenticated users only</p>
+        <h3>Secure AI Management</h3>
+        <p>A secure experience with our AI model for a curated and customized itinerary</p>
       </div>
     </div>
   </section>

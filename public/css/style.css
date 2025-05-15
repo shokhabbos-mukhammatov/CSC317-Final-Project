@@ -8,8 +8,8 @@
 }
 
 :root {
-  --primary-color: #3498db;
-  --primary-dark: #2980b9;
+  --primary-color: #697720;
+  --primary-dark: #414a13;
   --secondary-color: #2ecc71;
   --secondary-dark: #27ae60;
   --text-color: #333;
@@ -49,7 +49,25 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
 }
+
+.imgcontainer{
+  width: 100%;
+  height: 25rem;
+  margin: auto;
+}
+
+.bk-img{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  margin: auto;
+}
+
+
 
 main {
   flex: 1;
@@ -296,12 +314,51 @@ input:focus {
 .welcome-section {
   text-align: center;
   padding: 3rem 0;
+  position:absolute;
+  top: -35%;
+  background: rgba(61, 52, 42, 0.7);
 }
 
 .welcome-section h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: rgb(101, 175, 65);
+}
+
+.welcome-section p {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: rgb(255, 251, 239);
+}
+
+.sectbreak{
+  background-color: var(--white);
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+}
+
+.sectbreak h2{
+  color: rgb(101, 175, 65);
+  padding-left: 3rem;
+  padding-top: 0.7rem;
+}
+
+
+.trip-generator-form{
+  position: relative;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+#destination{
+  height: 2rem;
+  width: 10rem;
+}
+
+#preferences{
+  width: 25rem;
+  height: 5rem;
 }
 
 .features-section {
@@ -370,6 +427,18 @@ input:focus {
 .tech-stack h2 {
   color: var(--primary-color);
   margin-bottom: 1rem;
+}
+
+/*
+* About Page
+*/
+.form{
+  background-color: var(--white);
+  padding: 2rem;
+  padding-top: 5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
 }
 
 /* 
