@@ -131,25 +131,3 @@
 
 
 <%- include('./partials/footer') %>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const startDateInput = document.getElementById('startDate');
-    const endDateInput = document.getElementById('endDate');
-
-    // Set min value of startDate to today
-    const today = new Date().toISOString().split('T')[0];
-    startDateInput.setAttribute('min', today);
-
-    // When startDate changes, set min of endDate to the selected startDate
-    startDateInput.addEventListener('change', function () {
-      const selectedStart = this.value;
-      endDateInput.setAttribute('min', selectedStart);
-
-      // Optional: clear endDate if it became invalid
-      if (endDateInput.value && endDateInput.value < selectedStart) {
-        endDateInput.value = '';
-      }
-    });
-  });
-</script>
